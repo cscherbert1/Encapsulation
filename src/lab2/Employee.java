@@ -92,7 +92,12 @@ public class Employee {
     // setter methods give the developer the power to control what data is
     // allowed through validation.
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        if(firstName == null || firstName.length()<2){
+            System.out.println("Error. First Name must be at least 2 characters.");
+        } else {
+            this.firstName = firstName;
+        }
+        
     }
 
     public String getLastName() {
@@ -100,7 +105,12 @@ public class Employee {
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        if(lastName == null || lastName.length()<2){
+            System.out.println("Error. Last name must be at least 2 characters.");
+        } else {
+            this.lastName = lastName;
+        }
+        
     }
 
     public String getSsn() {
@@ -108,7 +118,11 @@ public class Employee {
     }
 
     public void setSsn(String ssn) {
-        this.ssn = ssn;
+        if(ssn == null || ssn.length() != 9){
+            System.out.println("Enter valid SSN. Must be 9 digits.");
+        } else {
+            this.ssn = ssn;
+        }
     }
 
     public boolean isMetWithHr() {
@@ -149,7 +163,11 @@ public class Employee {
     }
 
     public void setCubeId(String cubeId) {
-        this.cubeId = cubeId;
+        if(cubeId == null || cubeId.length() < 3){
+            System.out.println("Error. Invalid Cubical ID");  
+        } else {
+            this.cubeId = cubeId;
+        }  
     }
 
     public Date getOrientationDate() {
@@ -157,6 +175,11 @@ public class Employee {
     }
 
     public void setOrientationDate(Date orientationDate) {
-        this.orientationDate = orientationDate;
+        if(orientationDate == null){
+            System.out.println("Error. Please schedule an Orientation Date.");
+        } else {
+             this.orientationDate = orientationDate;
+        }
+       
     }
 }
