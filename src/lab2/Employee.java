@@ -31,6 +31,8 @@ public class Employee {
     private String cubeId;
     private Date orientationDate;
 
+    //can use setters that already have valdiation, but will result in warnings. 
+    //more on the warnings later and how to deal with them. 
     public Employee(String firstName, String lastName, String ssn) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -78,7 +80,7 @@ public class Employee {
                 + cubeId + " on " + this.returnFormattedDate());
     }
 
-    public void processNewHire() {
+    public void processNewHire(String cubeId) {
         this.meetWithHrForBenefitAndSalaryInfo();
         this.meetDepartmentStaff();
         this.reviewDeptPolicies();
